@@ -40,8 +40,8 @@ void saludar(String nombre, String apellido){
     print("Hola, $nombre $apellido");
 }
 
-/**Calcula los días que faltan para el cumpleaños de una persona.
-  */  
+/*Calcula los días que faltan para el cumpleaños de una persona.
+  */
 int diasCumpleanos(DateTime fechaNacimiento){
 
   DateTime hoy = DateTime.now();
