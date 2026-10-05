@@ -1,22 +1,60 @@
+import 'dart:io';
+
+void main() {
+
+ String ? opcion; 
+ 
+ // Usamos un bucle do-while para asegurar que se pinte el menú al menos una vez
+ 
+  do {
+    print("\n------------------------------------------------------------");
+    print("¿Qué ejercicio desea ejecutar? El 0 saldrá del programa.");
+    print("Opciones: (0, 1, 2, 2.2, 3, 4, 5, 6)");
+    print("------------------------------------------------------------");
+    
+    opcion = stdin.readLineSync();
+
+    if (opcion == null || opcion.isEmpty) {
+      print("Opción no válida. Por favor, elija un número del 0 al 6.");
+      continue;
+    }
+
+    switch (opcion) {
+      case '0':
+        print("Saliendo del programa. ¡Hasta luego!");
+        break;
+      case '1':
+        ejercicio1();
+        break;
+      case '2':
+        ejercicio2();
+        break;
+      case '2.2':
+        ejercicio2_2();
+        break;
+      case '3':
+        ejercicio3();
+        break;
+      case '4':
+        ejercicio4();
+        break;
+      case '5':
+        ejercicio5();
+        break;
+      case '6':
+        ejercicio6();
+        break;
+      default:
+        print("Opción no válida. Por favor, elija un número del 0 al 6.");
+    }
+  } while (opcion != '0'); // Al marcar 0, el bucle se corta limpiamente
+}
+
 /*
  * 1. mensaje hola mundo
  * variable int inicializada a 1 y un string con tu nombre
  * mostrar con print una operación con la variable numerica y otra con el string
- * 
  */
-
-import 'dart:io';
-
-void main() {
-  ejercicio1();
-  ejercicio2();
-  ejercicio2_2();
-  ejercicio3();
-  ejercicio4();
-  ejercicio5();
-  ejercicio6();
-}
-
 void ejercicio1() {
   // 1.
   print("hola mundo");
@@ -28,11 +66,12 @@ void ejercicio1() {
 
   print("mi nombre es: $nombre");
 
-  print("La variable 1: $valor1 más cuatro es igual a: ($valor1+4)");
+  print("La variable 1: $valor1 más cuatro es igual a: ${valor1 + 4}");
 }
 
 void ejercicio2() {
-  List numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  List <int> numeros = List.filled(10, 0); // inicializamos un array de 10 elementos con valor 0
 
   // puede imprimirse un array tal cual usando la llamada a la variable
   print("Impresión del array con llamada a la variable $numeros");
@@ -41,7 +80,7 @@ void ejercicio2() {
     numeros[i] = i + 2;
 
     //puede imprimirse un array de la forma tradicional en java
-    print("Impresion del array como en java $numeros");
+    print("Modificando posición $i del array con valor ${numeros[i]}");
   }
 
   print(numeros);
