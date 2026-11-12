@@ -4,12 +4,12 @@ Euclides
 
 void main() {
   // definimos los dos números enteros positivos
-  int a = 144;
-  int b = 128;
+  int positivo1 = 144;
+  int positivo2 = 128;
 
   // guardamos los valores originales para mostrarlos al final
-  int num1 = a;
-  int num2 = b;
+  int num1 = positivo1;
+  int num2 = positivo2;
 
   // aplicamos el algoritmo de Euclides mediante divisiones sucesivas
   while (b != 0) {
