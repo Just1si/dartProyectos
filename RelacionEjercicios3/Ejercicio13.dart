@@ -3,7 +3,7 @@ import 'dart:io';
 import 'common.dart';
 
 void main() {
-  List<String> colores = ["Rojo", "Amarillo", "Violeta"];
+  List<String> colores = ["rojo", "amarillo", "violeta"];
   String entrada = "";
   int opcion = 0;
 
@@ -19,8 +19,12 @@ void main() {
         case 1:
           print("introduzca el color que desee");
           entrada = stdin.readLineSync()!;
-          colores.add(entrada);
-          print(colores);
+          if (colores.contains(entrada.toLowerCase())) {
+            print("Color ya en la lista. \nIntroduzca otro");
+          } else {
+            colores.add(entrada.toLowerCase());
+            print(colores);
+          }
           break;
         case 2:
           print("Introduzca el color a eliminar:");
