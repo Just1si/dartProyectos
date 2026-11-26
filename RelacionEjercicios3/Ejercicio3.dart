@@ -1,7 +1,5 @@
 import 'dart:io';
 
-import 'common.dart';
-
 void main() {
   print("Introduzca una palabra o frase toda en mayúscula o toda en minúscula");
   String frase = stdin.readLineSync()!;
